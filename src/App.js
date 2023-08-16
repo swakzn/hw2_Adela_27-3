@@ -10,13 +10,15 @@ class Squares extends React.Component{
   }
   block1Click = () => {
     this.setState((prevState) => ({
-      square1Color: prevState.square1Color === 'red' ? 'blue' : 'red'
+      block1: prevState.block1 === 'red' ? 'blue' : 'red',
+      block2: prevState.block2 === 'blue' ? 'red' : 'blue'
     }));
   };
 
   block2Click = () => {
     this.setState((prevState) => ({
-      square2Color: prevState.square2Color === 'blue' ? 'red' : 'blue'
+      block1: prevState.block1 === 'red' ? 'blue' : 'red',
+      block2: prevState.block2 === 'blue' ? 'red' : 'blue'
     }));
   };
 
@@ -25,12 +27,12 @@ class Squares extends React.Component{
         <div className="App">
           <div
               className="square"
-              style={{ backgroundColor: this.state.square1Color }}
+              style={{ backgroundColor: this.state.block1 }}
               onClick={this.block1Click}
           ></div>
           <div
               className="square"
-              style={{ backgroundColor: this.state.square2Color }}
+              style={{ backgroundColor: this.state.block2 }}
               onClick={this.block2Click}
           ></div>
         </div>
